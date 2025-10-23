@@ -15,15 +15,13 @@ int main() {
     int *tasksList = new int[capacity];
 
     do {
-        do {
-            cout << "Выберите опцию:" << endl
-            << "1. Добавить новую задачу;" << endl
-            << "2. Удалить задачу;" << endl 
-            << "3. Просмотреть все задачи;" << endl
-            << "4. Выйти." << endl << "> "; 
-            cin >> option;
-        } while (!(1 <= option && option <= 5));
-
+        cout << "Выберите опцию:" << endl
+        << "1. Добавить новую задачу;" << endl
+        << "2. Удалить задачу;" << endl 
+        << "3. Просмотреть все задачи;" << endl
+        << "4. Выйти." << endl << "> "; 
+        cin >> option;
+        
         switch (option) {
             case 1:
                 if(taskCount == capacity) {
@@ -42,6 +40,7 @@ int main() {
                 tasksList[taskCount] = Id;
                 taskCount++;
                 cout << "Задача номер " << Id << " успешно добавлена" << endl;
+                break;
             case 2:
                 if (taskCount == 0) {
                     cout << "Список задач пуст" << endl;
@@ -63,15 +62,35 @@ int main() {
                             for (int j = i; j < taskCount - 1; j++) {
                                 tasksList[j] = tasksList[j + 1];
                             }
+                            taskCount--;
+                            cout << "Задача номер " << deleteId << " удалена" << endl;
+                            break; 
                         }
                     }
+
+                    if (!found) {
+                        cout << "Задача с номером " << deleteId << " не найдена" << endl;
+                    }
                 }
-
-
+                break;
+            case 3:
+                if (taskCount == 0) {
+                    cout << "Список задач пуст" << endl;
+                } else {
+                    cout << "Текущие задачи: ";
+                    for (int i = 0; i < taskCount; i++) {
+                        cout << tasksList[i] << " ";
+                    }
+                    cout << endl;
+                }
+                break;
+            case 4:
+                delete[] tasksList;
+                return 0;
+            default:
+                cout << "Неверная опция. Попробуйте снова." << endl;
+                break;
         }
-
-
-
 
         cout << endl << "Хотите продолжить? (y/n): ";
         cin >> choice;
