@@ -56,8 +56,8 @@ int main() {
         cout << "1. Общее количество посещений: " << totalVisits << endl;
         cout << "2. Среднее количество посещений в день: " << averageVisits << endl;
         cout << "3. Максимальное число посещений: " << maxVisits << " (день " << maxDay << ")" << endl;
-        cout << "   Минимальное число посещений: " << minVisits << " (день " << minDay << ")" << endl;
-        cout << "4. Процент дней с низкой посещаемостью: " << lowPercentage << "%" << endl;
+        cout << "4  Минимальное число посещений: " << minVisits << " (день " << minDay << ")" << endl;
+        cout << "5. Процент дней с низкой посещаемостью: " << lowPercentage << "%" << endl;
         
         delete[] visits;
         
