@@ -17,8 +17,7 @@ int main() {
         int* visits = new int[days];
         
         cout << "Введите количество посетителей за каждый день:" << endl;
-        for (int i = 0; i < days; i
-        ++) {
+        for (int i = 0; i < days; i++) {
             cout << "День " << (i + 1) << ": ";
             cin >> visits[i];
         }
