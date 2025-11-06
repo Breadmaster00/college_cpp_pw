@@ -1,3 +1,4 @@
 #pragma once
 
-int calculateTheSalaryFund(int hourlyEmployees[], int size_hourly, const int rateEmployees[], int size_rate);
+int calculateSum(int array[], int array_len);
+int getMinValue(int array[], int array_len);
