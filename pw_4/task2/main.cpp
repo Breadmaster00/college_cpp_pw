@@ -23,15 +23,15 @@ int main() {
         cout << "Сколько блюд вы сегодня съели? - ";
         cin >> actualDishesAmount;
 
-        int* callories = new int[actualDishesAmount];
+        int* calories = new int[actualDishesAmount];
         for (int i = 0; i < actualDishesAmount; ++i) {
             int callorie;
             cout << "Введите количество каллорий за " << i + 1 << " блюдо - ";
             cin >> callorie;
-            callories[i] = callorie;
+            calories[i] = callorie;
         }
 
-        allCalories = countAllCalories(callories, actualDishesAmount);
+        allCalories = countAllCalories(calories, actualDishesAmount);
         if (matchThePlan(allCalories, targetCalories)) {
             cout << "Всё идёт по плану, так держать!!!" << endl;
         }
@@ -40,6 +40,7 @@ int main() {
             cout << "Кушайте чаще!!!" << endl;
         }
 
+        delete[] calories;
         cout << "Хотите посчитать колории за новый день? (y/n): ";
         cin >> choice;
     } while (choice == 'y' || choice == 'Y');

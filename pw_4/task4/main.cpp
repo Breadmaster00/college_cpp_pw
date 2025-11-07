@@ -88,7 +88,7 @@ int main() {
         cout << "В прошлом году температура ниже 0 была " << less_than_zero2024 << " дней" << endl;
         cout << "В этом году температура ниже 0 была " << less_than_zero2025 << " дней" << endl;
 
-
+        delete[] october2025;
         cout << "Потемпературим ещё? ;) (y/n): ";
         cin >> choice;
     } while (choice == 'y' || choice == 'Y') ;
