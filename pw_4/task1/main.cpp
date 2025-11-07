@@ -82,7 +82,7 @@ int main() {
                 cout << "Такого действия нет, поробуйте снова\n";
                 break;
             }
-        cin.clear();
+        cin >> ws;
         cout << " = " << result << endl;
         cout << "Хотите продолжить? (y/n): ";
         cin >> choice;
