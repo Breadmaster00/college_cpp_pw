@@ -30,6 +30,14 @@ Car::~Car() {
     cout << color << " " << mark << " взорвался!!" << endl;
 }
 
+Car::Car(const Car& other) {
+    this->mark = other.mark;
+    this->color = other.color;
+    this->typeOfkuzov = other.typeOfkuzov;
+    this->engineCapacity = other.engineCapacity;
+    this->probeg = other.probeg;
+}
+
 // геттеры
 const string Car::getMark() { return mark; }
 const string Car::getColor() { return color; }
@@ -105,13 +113,13 @@ Car Car::operator--(int) {
     return obj;
 }
 
-bool Car::operator<(Car other) {
+bool Car::operator<(const Car& other) {
     return engineCapacity < other.engineCapacity;
 }
-bool Car::operator>(Car other) {
+bool Car::operator>(const Car& other) {
     return engineCapacity > other.engineCapacity;
 }
-bool Car::operator==(Car other) {
+bool Car::operator==(const Car& other) {
     return engineCapacity == other.engineCapacity;
 }
 

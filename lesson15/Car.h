@@ -14,6 +14,7 @@ struct Car {
         Car(string mark, string color, string typeOfkuzov, double engineCapacity, int probeg);
         Car(string mark, string color, string typeOfkuzov, double engineCapacity);
         ~Car();
+        Car(const Car& other);
 
         // геттеры
         const string getMark();
@@ -40,7 +41,7 @@ struct Car {
         Car& operator--();
         Car operator--(int);
 
-        bool operator<(Car other);
-        bool operator>(Car other);
-        bool operator==(Car other);
+        bool operator<(const Car& other);
+        bool operator>(const Car& other);
+        bool operator==(const Car& other);
 };

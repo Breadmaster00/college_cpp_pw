@@ -30,6 +30,14 @@ Animal::~Animal() {
     cout << name << " уничтожен!" << endl;
 }
 
+Animal::Animal(const Animal& other) {
+    this->name = other.name;
+    this->species = other.species;
+    this->color = other.color;
+    this->age = other.age;
+    this->weight = other.weight;
+}
+
 // геттеры
 const string Animal::getName() { return name; }
 const string Animal::getSpecies() { return species; }
@@ -103,12 +111,12 @@ Animal Animal::operator--(int) {
     return obj;
 }
 
-bool Animal::operator<(Animal other) {
+bool Animal::operator<(const Animal& other) {
     return weight < other.weight;
 }
-bool Animal::operator>(Animal other) {
+bool Animal::operator>(const Animal& other) {
     return weight > other.weight;
 }
-bool Animal::operator==(Animal other) {
+bool Animal::operator==(const Animal& other) {
     return weight == other.weight;
 }

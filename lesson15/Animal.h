@@ -15,6 +15,7 @@ class Animal {
         Animal(string name, string species, string color, int age, float weight);
         Animal(string name, string color, int age, float weight);
         ~Animal();
+        Animal(const Animal& other);
 
         // геттеры
         const string getName();
@@ -41,8 +42,8 @@ class Animal {
         Animal& operator--();
         Animal operator--(int);
 
-        bool operator<(Animal other);
-        bool operator>(Animal other);
-        bool operator==(Animal other);
+        bool operator<(const Animal& other);
+        bool operator>(const Animal& other);
+        bool operator==(const Animal& other);
         
 };
