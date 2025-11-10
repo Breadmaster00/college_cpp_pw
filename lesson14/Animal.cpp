@@ -11,23 +11,18 @@ Animal::Animal(string name, string species, string color, int age, float weight)
     this->age = age;
     this->weight = weight;
 }
-Animal::Animal(string name, string color, int age, float weight) {
-    this->name = name;
-    this->species = "обыкновенный";
-    this->color = color;
-    this->age = age;
-    this->weight = weight;
-}
+Animal::Animal(string name, string color, int age, float weight)
+    : Animal(name, "обыкновенный", color, age, weight) {}
 
 Animal::~Animal() {
-    cout << name << " уничтожен!";
+    cout << name << " уничтожен!" << endl;
 }
 
 // геттеры
 const string Animal::getName() { return name; }
 const string Animal::getSpecies() { return species; }
 const string Animal::getColor() { return color; }
-const int Animal::getAge() { return age }
+const int Animal::getAge() { return age; }
 const float Animal::getWeight() { return weight; }
 
 // сеттеры
@@ -44,16 +39,20 @@ void Animal::setColor(const string color) {
 }
 
 void Animal::setAge(const int age) {
-    this->age = age;
+    if (age >= 0) {
+        this->age = age;
+    } else {
+        cout << "Нельзя указать возраст меньше 0" << endl;
+    }
 }
 
 void Animal::setWeight(const float weight) {
-    this->weight = weight;
+    if (weight >= 0) {
+        this->weight = weight;
+    } else {
+        cout << "Нельзя указать вес меньше 0 кг" << endl;
+    }
 }
-void setSpecies(const string species);
-void setColor(const string color);
-void setAge(const int age);
-void setWeight(const float weight);
 
 // остальные методы
 void Animal::increaseWheight(int days_of_kormezhka) {
@@ -67,6 +66,6 @@ void Animal::changeName(string new_name) {
     name = new_name;
 }
 
-void Animal::printInfo() {
+const void Animal::printInfo() {
     cout << name << " вида " << species << " цвета " << color << " возрастом " << age << " весом " << weight << "кг" << endl; 
 }

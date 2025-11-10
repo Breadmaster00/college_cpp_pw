@@ -11,8 +11,26 @@ struct Car {
         double engineCapacity;
         int probeg;
     public:
-        void initCar(string mark, string color, string typeOfkuzov, double engineCapicity, int probeg);
+        Car(string mark, string color, string typeOfkuzov, double engineCapacity, int probeg);
+        Car(string mark, string color, string typeOfkuzov, double engineCapacity);
+        ~Car();
+
+        // геттеры
+        const string getMark();
+        const string getColor();
+        const string getTypeOfkuzov();
+        const double getEngineCapacity();
+        const int getProbeg();
+
+        // сеттеры
+        void setMark(const string mark);
+        void setColor(const string color);
+        void setTypeOfkuzov(const string typeOfkuzov);
+        void setEngineCapacity(const double engineCapacity);
+        void setProbeg(const int probeg);
+
+        // другие методы
         double countAvergeFuelConsumption(double distance);
         void scrutit_probeg(int scrutka);
-        void printInfo();
+        const void printInfo();
 };

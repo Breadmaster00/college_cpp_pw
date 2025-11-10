@@ -33,7 +33,7 @@ class Animal {
         // остальные методы
         void increaseWheight(int days_of_kormezhka);
         void changeName(string new_name);
-        void printInfo();
+        const void printInfo();
 
         
 };
