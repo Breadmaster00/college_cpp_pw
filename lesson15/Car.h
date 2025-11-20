@@ -3,7 +3,7 @@
 
 using namespace std;
 
-struct Car {
+class Car {
     private:
         string mark;
         string color;
